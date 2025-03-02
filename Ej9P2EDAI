@@ -1,0 +1,23 @@
+// 9. Suma con Apuntadores
+#include <stdio.h>
+
+//Funcion para la suma de un arreglo, como argumentos enviamos la dirreccion de memoria en donde empieza el array y el tamaño del array
+int sumaArreglo(int *arr, int tamanio) {
+    int i,suma=0;
+	for(i=0;i<tamanio;i++){
+		//La suma será igual a suma más el siguiente valor de i
+		suma+=*(arr+i);
+	}
+    return suma;
+}
+
+int main() {
+	int res;
+	int ptr;
+    int numeros[] = {1, 2, 3, 4, 5};
+    ptr=numeros;
+	// Código para calcular y mostrar la suma
+    res=sumaArreglo(ptr,5 );
+    printf("El resultado de la suma es:%i",res);
+    return 0;
+}
