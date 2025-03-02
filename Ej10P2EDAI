@@ -1,0 +1,39 @@
+// 10. Ordenamiento con Apuntadores (Burbuja)
+#include <stdio.h>
+void ordenarBurbuja(int *array, int tamanio) {
+    // Implementar algoritmo de ordenamiento aquí
+    int i,temp,cam=1;
+    //El algoritmo de ordenamiento continuara hasta que cam(cambios en el arreglo) sea falso es decir no haya
+    while (cam==1){
+    	//Se reinicializa el valor de cam como 0 y será así a menos que más adelante se valide si si los hay
+		cam=0;
+		//Este ciclo for recorre el arreglo e intercambia entre valores adyacentes(que esten al lado) mientras que elelemento i sea mayor a i+1 para que quede ordenado de mayor a menor	
+    	for(i=0;i<tamanio-1;i++){
+    		temp=*(array+i);
+    		//printf("Se comparara %i,%i\n",(array+i),(array+1+i));
+    		//En este if valida si el elemento i es mayor que i+1 y los intercambia así como en ele ejercicio hecho anteriormente
+	    	if((array+i)>(array+1+i)){
+	    		//printf("Se intercambia %i,%i\n",(array+i),(array+1+i));
+				(array+i)=(array+1+i);
+				*(array+1+i)=temp;
+				//Si hubo cambios se le da el valor de verdadero a cam
+				cam=1;	
+			}
+		}
+	}
+    
+}
+
+int main() {
+    int arr[] = {34, 12, 56, 78, 23};
+    int *ptr;
+    ptr=arr;
+    int i;
+    // Código para ordenar y mostrar el arreglo
+    ordenarBurbuja(ptr, 5);
+    //Imprimimos el nuevo arreglo
+    for(i=0;i<5;i++){
+    	printf("%i\n",*(ptr+i));
+		}
+    return 0;
+}
