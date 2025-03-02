@@ -1,0 +1,12 @@
+// 7. Accediendo a la Memoria
+#include <stdio.h>
+
+int main() {
+	int i;
+    int arr[5] = {10, 20, 30, 40, 50};
+    	for(i=0;i<5;i++){
+    		//Si usamos "&" anteriormente a un arreglo imprimira la direccion de memoria y se pone %x para imprimir el valor hexadecimal
+			printf("La direccion de memoria de la posicion (%d) es:%x\n",i,&arr[i]);
+	}
+    return 0;
+}
